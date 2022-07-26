@@ -1,23 +1,24 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Header from "./components/All/Header";
-import Switch from "./components/All/Switch";
-import All from "./pages/All";
-import Favs from "./pages/Favs";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="container-global">
-        <Header />
-        <div className="container-principal">
-          <Switch />
-          <Routes>
-            <Route path="/all/:numberpage" element={<All />} />
-            <Route path="/favs" element={<Favs />} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
