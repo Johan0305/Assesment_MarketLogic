@@ -1,3 +1,49 @@
-// Pages
+* {
+  font-family: "Radio Canada", sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
+.container-global {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+// Pages
+@import "./styles/pages/All.scss";
+@import "./styles/pages/Favs.scss";
 //components
+@import "./styles/components/Header.scss";
+@import "./styles/components/Switch.scss";
+@import "./styles/components/TargetInfo.scss";
+@import "./styles/components/Pagination.scss";
