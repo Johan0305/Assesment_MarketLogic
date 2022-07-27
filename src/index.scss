@@ -7,6 +7,7 @@
 .container-global {
   height: 100%;
   width: 100%;
+  min-width: 822px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,12 +33,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(120, 178, 240);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgb(30, 86, 146);
 }
 // Pages
 @import "./styles/pages/All.scss";

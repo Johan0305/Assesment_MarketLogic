@@ -15,8 +15,8 @@ const Switch = () => {
           All
         </button>
         <button
-          className={pathname === "/favs" ? "button-right-activate" : null}
-          onClick={() => nav("/favs")}
+          className={pathname.includes("favs") ? "button-right-activate" : null}
+          onClick={() => nav("/favs/0")}
         >
           My Favs
         </button>
