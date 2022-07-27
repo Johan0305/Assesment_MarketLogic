@@ -28,7 +28,6 @@ const TargetInfo = ({ target }) => {
       localStorage.setItem("targetsMarked", id);
     } else {
       localStorage.setItem("targetsMarked", [...targetsID, id]);
-      console.log(target.id);
     }
   };
 

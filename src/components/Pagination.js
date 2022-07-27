@@ -14,7 +14,6 @@ const Pagination = ({ number }) => {
   const dispatch = useDispatch();
   const filterState = localStorage.getItem("filterState");
 
-  console.log(number);
   return (
     <button
       className={
