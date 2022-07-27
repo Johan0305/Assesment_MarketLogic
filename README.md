@@ -24,15 +24,21 @@ This is a page focused on filtering the best news about technology, you can mana
 ## How to run
 
 1. When you start the app it takes you to a site like this:
-![image](https://user-images.githubusercontent.com/97265315/181215339-aad52de9-63b7-4743-99bf-3bc4829e0711.png)
+
+![image](https://user-images.githubusercontent.com/97265315/181220666-28e61243-3289-4407-bc96-361542a359ff.png)
+
+To use the application, you have to click on the All button so that all your tasks appear
 
 2. This is our filter, it will help us find the news we want according to the technology (React, Angular or Vue)
+
 ![image](https://user-images.githubusercontent.com/97265315/181215634-8e532bf6-3249-4053-a804-af7aeabbe399.png)
 
 3. This is the card which if you click on it takes you to the site of the news and giving the heart, you can save the card in your favorites:
+
 ![image](https://user-images.githubusercontent.com/97265315/181215947-d98c7b52-56b7-46ac-bb3d-2bdc8c51f887.png)
 
 4.This is the navigation section. You can move between pages by clicking each button or using the arrow buttons.
+
 ![image](https://user-images.githubusercontent.com/97265315/181216020-1ad81e2c-f52f-4437-99eb-3f800473146a.png)
 
 5.this is the switch that will help you switch between the news that there is and the ones that you saved as favorites.
