@@ -15,7 +15,7 @@
 }
 .grid-info {
   display: grid;
-  grid-template-columns: repeat(2, 550px);
+  grid-template-columns: repeat(2, 48.1%);
   grid-gap: 20px;
 }
 
@@ -69,5 +69,12 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1046px) {
+  .grid-info {
+    display: flex;
+    flex-direction: column;
   }
 }
