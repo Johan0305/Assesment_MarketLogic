@@ -12,6 +12,7 @@ function App() {
         <div className="container-principal">
           <Switch />
           <Routes>
+            <Route path="/" element={<Navigate to="/all/0" />}></Route>
             <Route path="/all/:numberpage" element={<All />} />
             <Route path="/favs/:numberpage" element={<Favs />} />
           </Routes>
