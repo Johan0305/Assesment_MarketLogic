@@ -21,7 +21,7 @@ const All = () => {
   const numberPage = pathname.split("")[5];
   const pagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  //
+  //this useEffect, brings according to the applied filter the necessary information
   useEffect(() => {
     if (filterValue !== null) {
       if (filterValue === "React") {
