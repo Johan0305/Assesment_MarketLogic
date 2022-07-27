@@ -31,9 +31,8 @@ const All = () => {
       } else if (filterValue === "Vue") {
         dispatch(getApiVue(numberPage));
       }
-    } else {
-      dispatch(getAllApi(numberPage));
     }
+    dispatch(getAllApi(numberPage));
   }, []);
 
   // This function is responsible for setting the filter status and sending the filter value to local storage.
