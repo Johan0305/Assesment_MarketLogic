@@ -21,9 +21,9 @@ const All = () => {
   const numberPage = pathname.split("")[5];
   const pagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  //
   useEffect(() => {
-    dispatch(getAllApi(numberPage));
-    if (filterValue !== "") {
+    if (filterValue !== null) {
       if (filterValue === "React") {
         dispatch(getApiReact(numberPage));
       } else if (filterValue === "Angular") {
@@ -31,6 +31,8 @@ const All = () => {
       } else if (filterValue === "Vue") {
         dispatch(getApiVue(numberPage));
       }
+    } else {
+      dispatch(getAllApi(numberPage));
     }
   }, []);
 
@@ -47,7 +49,7 @@ const All = () => {
     }
   };
 
-  console.log(numberPage);
+  console.log(filter);
   return (
     <div className="container-all">
       <div className="container-filter">
@@ -67,40 +69,8 @@ const All = () => {
         <div className="container-grid">
           <div className="grid-info">
             {localStorage.getItem("filterState")
-              ? filter.map(
-                  ({
-                    created_at,
-                    author,
-                    story_id,
-                    story_title,
-                    story_url,
-                  }) => (
-                    <TargetInfo
-                      created_at={created_at}
-                      author={author}
-                      story_id={story_id}
-                      story_title={story_title}
-                      story_url={story_url}
-                    />
-                  )
-                )
-              : api.map(
-                  ({
-                    created_at,
-                    author,
-                    story_id,
-                    story_title,
-                    story_url,
-                  }) => (
-                    <TargetInfo
-                      created_at={created_at}
-                      author={author}
-                      story_id={story_id}
-                      story_title={story_title}
-                      story_url={story_url}
-                    />
-                  )
-                )}
+              ? filter.map((target) => <TargetInfo target={target} />)
+              : api.map((target) => <TargetInfo target={target} />)}
           </div>
         </div>
       )}
@@ -108,7 +78,7 @@ const All = () => {
       <div className="container-pagination">
         <Pagination number={"<"} />
         {pagination.map((item, index) => (
-          <Pagination number={index} />
+          <Pagination number={index} key={index} />
         ))}
         <Pagination number={">"} />
       </div>
