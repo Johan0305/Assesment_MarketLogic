@@ -13,7 +13,7 @@ function App() {
           <Switch />
           <Routes>
             <Route path="/all/:numberpage" element={<All />} />
-            <Route path="/favs" element={<Favs />} />
+            <Route path="/favs/:numberpage" element={<Favs />} />
           </Routes>
         </div>
       </div>

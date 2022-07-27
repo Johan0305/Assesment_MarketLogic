@@ -2,35 +2,68 @@ import React, { useState } from "react";
 import heart from "../assets/heart.png";
 import heartFull from "../assets/heart-full.png";
 import clock from "../assets/reloj-de-pared.png";
+import { useSelector, useDispatch } from "react-redux";
+import { UPDATE_HITS } from "../store/reducers/All.reducer";
 
-const TargetInfo = ({
-  created_at,
-  author,
-  story_id,
-  story_title,
-  story_url,
-}) => {
-  const [hearts, setHearts] = useState(heart);
-  const date = new Date(created_at);
+const TargetInfo = ({ target }) => {
+  const dispatch = useDispatch();
+  const [heartMarked, setHeartMarked] = useState(target?.marked);
+  const targetsID =
+    localStorage.getItem("targetsMarked") !== null &&
+    localStorage
+      .getItem("targetsMarked")
+      .split(",")
+      .filter((item) => item !== "");
+  const date = new Date(target?.created_at);
+
+  const handleSubmitTargetsMarked = (id) => {
+    setHeartMarked(true);
+    dispatch({
+      type: UPDATE_HITS,
+      payload: { ...target, marked: true },
+    });
+
+    if (localStorage.getItem("targetsMarked") === null) {
+      localStorage.setItem("targetsMarked", id);
+    } else {
+      localStorage.setItem("targetsMarked", [...targetsID, id]);
+      console.log(target.id);
+    }
+  };
+
+  const handleSubmitNoTargetsMarked = (id) => {
+    setHeartMarked(false);
+    dispatch({
+      type: UPDATE_HITS,
+      payload: { ...target, marked: false },
+    });
+    localStorage.setItem(
+      "targetsMarked",
+      targetsID.filter((item) => item !== "" && item !== id)
+    );
+  };
+
   return (
-    <div className="container-target" key={story_id}>
-      <a href={story_url} target="_blank" rel="noreferrer" c>
+    <div className="container-target" key={target?.id}>
+      <a href={target?.story_url} target="_blank" rel="noreferrer">
         <div className="container-info">
           <div className="container-time">
             <img src={clock} alt={"time"} />
-            <p>{`${date.getHours()} hours ago by ${author}`}</p>
+            <p>{`${date.getHours()} hours ago by ${target?.author}`}</p>
           </div>
           <div className="container-text">
-            <p>{story_title}</p>
+            <p>{target?.story_title}</p>
           </div>
         </div>
       </a>
       <div className="container-like">
         <img
-          src={hearts}
+          src={heartMarked ? heartFull : heart}
           alt="heart"
           onClick={() =>
-            hearts === heart ? setHearts(heartFull) : setHearts(heart)
+            heartMarked === false
+              ? handleSubmitTargetsMarked(target.id)
+              : handleSubmitNoTargetsMarked(target.id)
           }
         />
       </div>
