@@ -49,7 +49,6 @@ const All = () => {
     }
   };
 
-  console.log(filter);
   return (
     <div className="container-all">
       <div className="container-filter">
