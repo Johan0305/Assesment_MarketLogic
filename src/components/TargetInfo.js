@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import heart from "../assets/heart.png";
 import heartFull from "../assets/heart-full.png";
 import clock from "../assets/reloj-de-pared.png";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { UPDATE_HITS } from "../store/reducers/All.reducer";
 
 const TargetInfo = ({ target }) => {
@@ -16,6 +16,7 @@ const TargetInfo = ({ target }) => {
       .filter((item) => item !== "");
   const date = new Date(target?.created_at);
 
+  //this function checks the card in the global state
   const handleSubmitTargetsMarked = (id) => {
     setHeartMarked(true);
     dispatch({
@@ -31,6 +32,7 @@ const TargetInfo = ({ target }) => {
     }
   };
 
+  //this function unchecks the card in the global state
   const handleSubmitNoTargetsMarked = (id) => {
     setHeartMarked(false);
     dispatch({

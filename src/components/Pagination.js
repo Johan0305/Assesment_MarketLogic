@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   getAllApi,
   getApiAngular,
@@ -14,6 +14,7 @@ const Pagination = ({ number }) => {
   const dispatch = useDispatch();
   const filterState = localStorage.getItem("filterState");
 
+  console.log(number);
   return (
     <button
       className={
@@ -25,13 +26,39 @@ const Pagination = ({ number }) => {
         // these conditions serve to bring specific data from the api and achieve paging
         //these first two conditions is to navigate with the arrows
         if (number === "<") {
-          return pathname !== "/all/0"
-            ? nav(`/all/${pathname.split("")[5] - 1}`)
-            : null;
+          if (pathname !== "/all/0") {
+            if (filterState !== null) {
+              if (filterState === "React") {
+                dispatch(getApiReact(Number(pathname.split("")[5]) - 1));
+              } else if (filterState === "Angular") {
+                dispatch(getApiAngular(Number(pathname.split("")[5]) - 1));
+              } else if (filterState === "Vue") {
+                dispatch(getApiVue(Number(pathname.split("")[5]) - 1));
+              }
+            } else {
+              dispatch(getAllApi(Number(pathname.split("")[5]) - 1));
+            }
+            nav(`/all/${Number(pathname.split("")[5]) - 1}`);
+          } else {
+            return null;
+          }
         } else if (number === ">") {
-          return pathname === "/all/9"
-            ? null
-            : nav(`/all/${Number(pathname.split("")[5]) + 1}`);
+          if (pathname === "/all/9") {
+            return null;
+          } else {
+            if (filterState !== null) {
+              if (filterState === "React") {
+                dispatch(getApiReact(Number(pathname.split("")[5]) + 1));
+              } else if (filterState === "Angular") {
+                dispatch(getApiAngular(Number(pathname.split("")[5]) + 1));
+              } else if (filterState === "Vue") {
+                dispatch(getApiVue(Number(pathname.split("")[5]) + 1));
+              }
+            } else {
+              dispatch(getAllApi(Number(pathname.split("")[5]) + 1));
+            }
+            nav(`/all/${Number(pathname.split("")[5]) + 1}`);
+          }
         } else if (number !== "<" && number !== ">") {
           //these conditions is to navigate when clicking the numbers and render the info
           if (filterState !== null) {

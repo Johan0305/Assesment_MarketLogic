@@ -1,18 +1,18 @@
-# Getting Started with Create React App
+# HACKER NEWS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a page focused on filtering the best news about technology, you can manage your news by saving the ones you like the most
 
-## Available Scripts
+## Created by:
 
-In the project directory, you can run:
+- Johan Sora
 
-### `npm start`
+## Build with
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create react app
+- Mantine
+- Axios
+- React Router
+- Redux
 
 ### `npm test`
 
