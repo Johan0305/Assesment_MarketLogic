@@ -14,57 +14,27 @@ This is a page focused on filtering the best news about technology, you can mana
 - React Router
 - Redux
 
-### `npm test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository.
+2. Use the command npm install.
+3. Use the command npm run start.
+4. If you do not have Nodejs installed, install the latest version at this link https://nodejs.org/es/
 
-### `npm run build`
+## How to run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. When you start the app it takes you to a site like this:
+![image](https://user-images.githubusercontent.com/97265315/181215339-aad52de9-63b7-4743-99bf-3bc4829e0711.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. This is our filter, it will help us find the news we want according to the technology (React, Angular or Vue)
+![image](https://user-images.githubusercontent.com/97265315/181215634-8e532bf6-3249-4053-a804-af7aeabbe399.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. This is the card which if you click on it takes you to the site of the news and giving the heart, you can save the card in your favorites:
+![image](https://user-images.githubusercontent.com/97265315/181215947-d98c7b52-56b7-46ac-bb3d-2bdc8c51f887.png)
 
-### `npm run eject`
+4.This is the navigation section. You can move between pages by clicking each button or using the arrow buttons.
+![image](https://user-images.githubusercontent.com/97265315/181216020-1ad81e2c-f52f-4437-99eb-3f800473146a.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5.this is the switch that will help you switch between the news that there is and the ones that you saved as favorites.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://user-images.githubusercontent.com/97265315/181216245-d790390d-f11e-46a9-a24b-efd327402a09.png)
